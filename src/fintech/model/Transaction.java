@@ -17,6 +17,9 @@ public abstract class Transaction {
         this.description = description;
     }
 
-    public abstract String getType();
+    @Override
+    public String toString() {
+        return id + "|" + username + "|" + amount + "|" + timestamp + "|" + description;
+    }
 
 }
