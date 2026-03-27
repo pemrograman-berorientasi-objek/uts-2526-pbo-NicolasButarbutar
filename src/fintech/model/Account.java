@@ -1,11 +1,15 @@
 
 package fintech.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Account {
 
     private String username;
     private String name;
     private double balance;
+    private List<Transaction> transactions;
 
     public Account(String name, String username) {
         this.name = name;
@@ -35,6 +39,15 @@ public class Account {
         }
         balance -= amount;
         return true;
+    }
+
+    public void addTransaction(Transaction t) {
+         transactions.add(t);
+    }
+
+    @Override
+    public String toString() {
+        return username +"|" + name + "|" + balance;
     }
 
 }
